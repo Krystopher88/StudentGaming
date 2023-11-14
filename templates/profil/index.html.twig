@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	StudentGaming, Mon Profil
+{% endblock %}
+
+{% block body %}
+	<div class="container-fluid">
+		<h1>
+			{{ controller_name }}
+			!
+		</h1>
+		<div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary d-flex justify-content-around">
+			<div class="col-lg-6 px-0">
+				<h3 class="fst-italic border-bottom border-black">
+					Mes données personnelles
+				</h3>
+				<ul class="lead my-3 list-unstyled">
+					<li>
+						{{ user.lastName }}
+						{{ user.firstName }}
+					</li>
+					<li>
+						{{ user.email }}
+					</li>
+					<li>
+						{{ user.address }}
+					</li>
+					<li>
+						{{ user.zipcode }}
+						{{ user.city }}
+					</li>
+					<a href="" class="btn btn-success m-2">
+						Modifier
+					</a>
+				</ul>
+			</div>
+            <div class="col-lg-4 text-center">
+                Avatar
+            </div>
+		</div>
+		<div class="row mb-3">
+			<div class="col-4">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">
+							<a href=" {{ path('profil_orders') }}" class="stretched-link">Mes commandes</a>
+						</h5>
+						<p class="card-text">
+							Suivres mes commandes.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">
+							<a href="" class="stretched-link">Mes paniers</a>
+						</h5>
+						<p class="card-text">
+							Mes produits sauvegardés.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="card">
+					<div class="card-body">
+						<h5 class="card-title">
+							<a href="" class="stretched-link">Mes adresses</a>
+						</h5>
+						<p class="card-text">
+							Gérer mes adresses.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

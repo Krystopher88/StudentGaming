@@ -1,0 +1,17 @@
+{% set limit = 8 %}
+{% set gamesToShow = games|slice(0, limit) %}
+
+{% for game in gamesToShow %}
+    <div class="card p-2 bg-transparent mb-5" style="width: 10rem; max-height: 20rem;">
+        <h5 class="text-center text-truncate">{{ game.title }}</h5>
+        <a href="{{ path('games_show', {slug : game.slug})}} }}"><img src="/assets/img/coolspot.jpg" class="card-img-top" alt="..."></a>
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+                <span>
+                    10 €
+                </span>
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+        </div>
+    </div>
+{% endfor %}

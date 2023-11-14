@@ -1,0 +1,66 @@
+<header>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-5">
+		<div class="container-fluid">
+			<a href="{{ path('home') }}" class="navbar-brand">
+				<img src="{{ asset('assets/img/logo.png') }}" alt="logo" width="70px">
+			</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbars" aria-controls="navbars" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbars">
+				<div class="col-lg-5 ms-auto">
+					<form role="search">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Rechercher..." aria-label="Rechercher...">
+							<button class="btn btn-outline-secondary" type="button">
+								<i class="fas fa-search"></i>
+							</button>
+						</div>
+					</form>
+				</div>
+				<ul class="navbar-nav ms-auto">
+					<li class="nav-item">
+						<a href="" class="nav-link">
+							<i class="fa-solid fa-location-dot me-2"></i>
+							Magasin
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="" class="nav-link">
+							<i class="fa-solid fa-cart-shopping me-2"></i>
+							Panier
+						</a>
+					</li>
+					{% if app.user %}
+						<li class="nav-item">
+							<a href="{{ path('profil_index') }}" class="nav-link">
+								<i class="fa-regular fa-user me-2"></i>
+								Mon Compte
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="{{ path('app_logout') }}" class="nav-link">
+								<i class="fa-regular fa-user me-2"></i>
+								Deconnexion
+							</a>
+						</li>
+					{% endif %}
+					{% if not app.user %}
+						<li class="nav-item">
+							<a href="{{ path('app_register') }}" class="nav-link">
+								<i class="fa-solid fa-pencil me-2"></i>
+								Inscription
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="{{ path('app_login') }}" class="nav-link">
+								<i class="fa-regular fa-user me-2"></i>
+								Connexion
+							</a>
+						</li>
+					{% endif %}
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>

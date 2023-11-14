@@ -1,0 +1,43 @@
+	<span class="fs-4 ms-4">
+		Student Gaming
+	</span>
+	<hr>
+	<ul class="nav nav-pills flex-column mb-auto">
+		<li class="mb-1">
+			<button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed text-white" data-bs-toggle="collapse" data-bs-target="#console-collapse" aria-expanded="false">
+				<h4>
+					Consoles
+				</h4>
+			</button>
+			<div class="collapse" id="console-collapse">
+				<ul class="btn-toggle-nav list-unstyled">
+					{% for console in consoles %}
+						<li class="nav-item">
+							<a href="#" class="nav-link d-inline-flex text-decoration-none rounded text-white ms-5 p-0">
+								{{ console.name }}
+							</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</li>
+		<li class="mb-1">
+			<button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed text-white" data-bs-toggle="collapse" data-bs-target="#category-collapse" aria-expanded="false">
+				<h4>
+					Genres
+				</h4>
+			</button>
+			<div class="collapse" id="category-collapse">
+				<ul class="btn-toggle-nav list-unstyled">
+					{% for category in categorys %}
+						<li class="nav-item">
+							<a href="#" class="nav-link d-inline-flex text-decoration-none rounded text-white ms-5 p-0">
+								{{ category.name }}
+							</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</li>
+	</ul>
+</ul>
